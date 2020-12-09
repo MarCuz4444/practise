@@ -52,7 +52,7 @@ func (service *serviceGolang) AddGolang(golang entity.Golang) int {
 	defer db.Close()
 	fmt.Print(golang)
 
-	query := "INSERT INTO customer(id, name, age, phone) values($1,$2,$3,$4) RETURNING golang_id"
+	query := "INSERT INTO customer(id, name, age, phone) values($1,$2,$3,$4) RETURNING id"
 	id := 0
 	err = db.QueryRow(query, golang.ID, golang.Name, golang.Age, golang.Phone).Scan(&id)
 	if err != nil {
