@@ -1,0 +1,4 @@
+[GIN-debug] GET    /golang                   --> main.main.func1 (1 handlers)
+[GIN-debug] POST   /golang                   --> main.main.func2 (1 handlers)
+[GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+[GIN-debug] Listening and serving HTTP on :8080
