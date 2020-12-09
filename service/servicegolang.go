@@ -45,14 +45,14 @@ func (service *serviceGolang) AddGolang(golang entity.Golang) int {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Successfully connected!")
+	fmt.Println("Successfully connected1!")
 	db.SetConnMaxLifetime(time.Second * 5)
 	db.SetMaxIdleConns(100)
 	db.SetMaxOpenConns(100)
 	defer db.Close()
 	fmt.Print(golang)
 
-	query := "INSERT INTO `customer`(id, name, age, phone) values($1,$2,$3,$4) RETURNING golang_id"
+	query := "INSERT INTO customer(id, name, age, phone) values($1,$2,$3,$4) RETURNING golang_id"
 	id := 0
 	err = db.QueryRow(query, golang.ID, golang.Name, golang.Age, golang.Phone).Scan(&id)
 	if err != nil {
